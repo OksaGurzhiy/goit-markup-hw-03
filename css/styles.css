@@ -6,6 +6,10 @@
   --accent: #404bbf;
   --main-btn: #4d5ae5;
   --second-bgc: #f4f4fd;
+  --number-cards-gallery: 3;
+  --distance-card-gallery: 24px;
+  --number-card-team: 4;
+  -distance-card-team: 24px;
 }
 body {
   color: var(--main-color);
@@ -281,10 +285,14 @@ a {
   display: flex;
   flex-wrap: wrap;
   margin-top: 72px;
+  gap: 0 24px;
 }
 
 .team-lead {
-  width: 264px;
+  flex-basis: calc(
+    (100% - (var(--distance-card-team) * (var(--number-cards-team) - 1))) /
+      var(--number-cards-team)
+  );
 
   background: #ffffff;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
@@ -292,9 +300,9 @@ a {
   border-radius: 0px 0px 4px 4px;
 }
 
-.team-lead:not(:last-child) {
+/* .team-lead:not(:last-child) {
   margin-right: 24px;
-}
+} */
 
 .team-description {
   padding: 32px 16px;
@@ -435,11 +443,14 @@ a {
 .all-portfolio {
   display: flex;
   flex-wrap: wrap;
+  gap: 48px 24px;
 }
 
 .portfolio-card {
-  width: 360px;
-  margin-right: 24px;
+  flex-basis: calc(
+    (100% - (var(--distance-card-gallery) * (var(--number-cards-gallery) - 1))) /
+      var(--number-cards-gallery)
+  );
 }
 
 .portfolio-card > a {
@@ -451,13 +462,13 @@ a {
   padding: 32px 16px;
 }
 
-.portfolio-card:nth-child(3n) {
+/* .portfolio-card:nth-child(3n) {
   margin-right: 0px;
 }
 
 .portfolio-card:not(:nth-last-child(-n + 3)) {
   margin-bottom: 48px;
-}
+} */
 
 .title-portfolio {
   margin-bottom: 8px;
