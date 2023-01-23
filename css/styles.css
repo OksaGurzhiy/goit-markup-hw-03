@@ -9,7 +9,7 @@
   --number-cards-gallery: 3;
   --distance-card-gallery: 24px;
   --number-card-team: 4;
-  -distance-card-team: 24px;
+  --distance-card-team: 24px;
 }
 body {
   color: var(--main-color);
